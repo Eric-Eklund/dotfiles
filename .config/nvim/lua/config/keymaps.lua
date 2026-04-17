@@ -32,5 +32,4 @@ for i = 1, 9 do
   vim.keymap.set("n", tostring(i), i .. "<C-w>w", { desc = "Go to window " .. i })
 end
 
-vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode" })
-vim.keymap.set("t", "jj", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+-- jk escape handled by better-escape.nvim (no input delay)

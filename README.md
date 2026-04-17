@@ -29,7 +29,7 @@ Catppuccin Mocha with auto-integrations, rainbow delimiters, and winbar (filenam
 | `Ö` | Focus terminal |
 | `å` | Search in file (`/`) |
 | `Å` | Grep in project |
-| `jj` | Exit insert / terminal mode |
+| `ff` | Exit insert / terminal mode (via better-escape.nvim) |
 
 ### Navigation
 | Key | Action |
