@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LazyVim Cheatsheet — Eric Edition</title>
+  <style>
+    :root {
+      --base: #1e1e2e;
+      --mantle: #181825;
+      --surface0: #313244;
+      --surface1: #45475a;
+      --overlay0: #6c7086;
+      --text: #cdd6f4;
+      --subtext: #bac2de;
+      --blue: #89b4fa;
+      --mauve: #cba6f7;
+      --green: #a6e3a1;
+      --yellow: #f9e2af;
+      --peach: #fab387;
+      --red: #f38ba8;
+      --teal: #94e2d5;
+      --lavender: #b4befe;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--base);
+      color: var(--text);
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 14px;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--mauve);
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--lavender);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section {
+      background: var(--mantle);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--surface1);
+    }
+
+    .section-header {
+      padding: 0.6rem 1rem;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--surface0);
+    }
+
+    .section-body {
+      padding: 0.4rem 0;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 1rem;
+      border-bottom: 1px solid var(--surface0);
+    }
+
+    .row:last-child { border-bottom: none; }
+    .row:hover { background: var(--surface0); }
+
+    .desc {
+      color: var(--subtext);
+      font-weight: 500;
+    }
+
+    .key {
+      color: var(--mauve);
+      font-weight: bold;
+      white-space: nowrap;
+      background: var(--surface0);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-left: 1rem;
+    }
+
+    .row:hover .key {
+      background: var(--surface1);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--overlay0);
+      margin-top: 2rem;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>LazyVim Cheatsheet</h1>
+  <p class="subtitle">Eric Edition — Catppuccin Mocha</p>
+  <div class="grid" id="grid"></div>
+  <footer>which-key: press space and wait · <a href="https://github.com/Eric-Eklund/dotfiles" style="color:var(--lavender)">dotfiles</a></footer>
+
+  <script>
+    const colors = {
+      navigation: 'var(--blue)',
+      search: 'var(--green)',
+      windows_splits: 'var(--peach)',
+      files_explorer: 'var(--yellow)',
+      editing: 'var(--teal)',
+      yank_delete_change: 'var(--lavender)',
+      git_terminal: 'var(--red)'
+    };
+
+    const labels = {
+      navigation: 'Navigation',
+      search: 'Search',
+      windows_splits: 'Windows & Splits',
+      files_explorer: 'Files & Explorer',
+      editing: 'Editing',
+      yank_delete_change: 'Yank / Delete / Change',
+      git_terminal: 'Git & Terminal'
+    };
+
+    fetch('cheatsheet.json')
+      .then(r => r.json())
+      .then(data => {
+        const grid = document.getElementById('grid');
+        for (const [section, entries] of Object.entries(data)) {
+          const el = document.createElement('div');
+          el.className = 'section';
+          const color = colors[section] || 'var(--text)';
+          let rows = '';
+          for (const [key, desc] of Object.entries(entries)) {
+            rows += `<div class="row"><span class="desc">${desc}</span><span class="key">${key}</span></div>`;
+          }
+          el.innerHTML = `
+            <div class="section-header" style="color:${color}">${labels[section] || section}</div>
+            <div class="section-body">${rows}</div>
+          `;
+          grid.appendChild(el);
+        }
+      });
+  </script>
+</body>
+</html>
