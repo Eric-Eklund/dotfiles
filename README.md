@@ -2,6 +2,8 @@
 
 LazyVim configuration.
 
+📋 **[Live Cheatsheet](https://eric-eklund.github.io/dotfiles/)** — all keybindings in one place
+
 ## Prerequisites
 
 - Neovim 0.10+
