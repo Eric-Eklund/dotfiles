@@ -1,63 +1,71 @@
 {
   "navigation": {
-    "s": "Flash — hoppa till synligt tecken",
+    "s": "Flash — jump to visible character",
     "gd": "Go to definition",
     "gr": "Find references",
-    "Ctrl+o": "Hoppa tillbaka",
-    "]m / [m": "Nästa / föreg. metod",
-    "{ / }": "Hoppa mellan kodblock",
-    "Ctrl+d / Ctrl+u": "Halv sida ner / upp",
-    "gg / G": "Toppen / botten av fil",
-    "zz": "Centrera skärmen"
+    "Ctrl+o": "Jump back",
+    "]m / [m": "Next / prev method",
+    "{ / }": "Jump between code blocks",
+    "Ctrl+d / Ctrl+u": "Half page down / up",
+    "gg / G": "Top / bottom of file",
+    "zz": "Center screen"
   },
   "search": {
-    "å": "Sök i fil",
-    "Å": "Grep i hela projektet",
-    "spc spc": "Hitta fil",
-    "spc ss": "Sök symboler i fil",
-    "spc ,": "Byt buffer",
-    "*": "Sök ordet under markören"
+    "å": "Search in file (/)",
+    "Å": "Grep in project",
+    "spc spc": "Find file",
+    "spc ss": "Search symbols in file",
+    "spc ,": "Switch buffer",
+    "spc /": "Grep in project",
+    "*": "Search word under cursor"
   },
   "windows_splits": {
-    "1-9": "Hoppa till fönster",
-    "Ctrl+pilar": "Ändra storlek på split",
-    "spc vs": "Vertikal split",
-    "spc hs": "Horisontell split",
-    "Ctrl+s": "Öppna i vsplit (explorer)",
-    "Ctrl+x": "Öppna i hsplit (explorer)"
+    "1-9": "Jump to window",
+    "Ctrl+arrows": "Resize split",
+    "spc vs": "Vertical split",
+    "spc hs": "Horizontal split",
+    "Ctrl+s": "Open in vsplit (explorer)",
+    "Ctrl+x": "Open in hsplit (explorer)"
   },
   "files_explorer": {
-    "spc e": "Toggla Explorer",
-    "spc fp": "Byt projekt",
-    "Q": "Stäng buffer",
-    "spc Q": "Stäng allt",
-    "a": "Ny fil (explorer)",
-    "r": "Byt namn (explorer)",
-    "d": "Ta bort (explorer)",
-    "H": "Toggla dolda filer"
+    "spc e": "Toggle Explorer",
+    "spc fp": "Switch project",
+    "Q": "Close buffer",
+    "spc Q": "Quit all",
+    "a": "New file (explorer)",
+    "r": "Rename (explorer)",
+    "d": "Delete (explorer)",
+    "H": "Toggle hidden files"
   },
   "editing": {
     "ö": "Command mode (:)",
-    "0": "Första tecknet (icke-blank)",
-    "^": "Radens start (position 0)",
-    "gcc": "Toggla kommentar",
+    "0": "First non-blank character",
+    "^": "Start of line (position 0)",
+    "gcc": "Toggle comment",
     "u": "Undo",
     "Ctrl+r": "Redo",
-    "p / P": "Klistra under / ovan",
-    "jj": "Exit insert/terminal mode"
+    "p / P": "Paste below / above",
+    "ff": "Exit insert/terminal mode (better-escape)"
   },
   "yank_delete_change": {
-    "y4j": "Yank nuvarande + 4 rader ner",
-    "y5k": "Yank nuvarande + 5 rader upp",
-    "yG": "Yank till slutet av filen",
-    "ygg": "Yank till toppen av filen",
-    "d3j": "Radera nuvarande + 3 rader ner",
-    "d5k": "Radera nuvarande + 5 rader upp",
-    "c2w": "Ändra 2 ord"
+    "y4j": "Yank current + 4 lines down",
+    "y5k": "Yank current + 5 lines up",
+    "yG / ygg": "Yank to end / start of file",
+    "y$ / y+End": "Yank to end of line",
+    "d3j": "Delete current + 3 lines down",
+    "d5k": "Delete current + 5 lines up",
+    "dw": "Delete from cursor to next word",
+    "diw": "Delete inner word (whole word)",
+    "cw": "Change from cursor to next word",
+    "ciw": "Change inner word (whole word)",
+    "ci\"": "Change inside quotes",
+    "ci( / ci{ / ci[": "Change inside brackets",
+    "c2w": "Change 2 words",
+    "cc / 3cc": "Change line / 3 lines"
   },
   "git_terminal": {
     "spc gg": "LazyGit",
-    "Ö": "Fokusera terminal",
-    "]g / [g": "Nästa / föreg. git-ändring"
+    "Ö": "Focus terminal",
+    "]g / [g": "Next / prev git change"
   }
 }
